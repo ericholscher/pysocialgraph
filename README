@@ -1,0 +1,5 @@
+pysocialgraph
+
+This is a very basic python wrapper around Google's social graph API. It will hopefully be improved as I have time, it was written as a basic proof of concept.
+
+I will also be releasing a Django version of this code a bit later on.
