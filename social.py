@@ -11,7 +11,7 @@ class Node(object):
     node_cache = {}
 
     def __init__(self, url, python_obj=None):
-        print "making %s" % url
+        #print "making %s" % url
         self.url = url
 
         if python_obj:
@@ -28,7 +28,7 @@ class Node(object):
         self.types = []
 
     def fetch_social_object(self):
-        print "querying %s" % self.url
+        #print "querying %s" % self.url
         resp = urllib2.urlopen(self.query_url % self.url)
         json_decoder = json.JSONDecoder()
         temp_python_obj = json_decoder.decode(resp.read())
@@ -67,12 +67,12 @@ class Node(object):
         db = shelve.open('test')
         if self.node_cache.has_key(url):
             #In local object cache
-            print "NODE: pulling %s from cache" % url
+            #print "NODE: pulling %s from cache" % url
             db.close()
             return self.node_cache[url]
         if db.has_key(url):
             #DB has key, put in local object cache
-            print "DB: pulling %s from cache" % url
+            #print "DB: pulling %s from cache" % url
             n = Node(url, db[url])
             self.node_cache[url] = n
             db.close()
