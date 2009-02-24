@@ -9,3 +9,7 @@ if jacob.loves(eric):
     print "Can you feeeeel the love toooonight!"
 if eric.loves(jacob):
     print "The peace the evening brings."
+
+print "Eric owns the following urls:"
+for url in eric.urls_claimed:
+    print url

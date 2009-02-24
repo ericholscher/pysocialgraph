@@ -136,14 +136,12 @@ class Request(object):
                 urls.add(ref)
         return list(urls)
 
-
     def print_urls_referenced(self):
         urls = set()
         for node in self.toplevel_nodes:
             for name,ref in node.nodes_referenced.items():
                 print "%s -> %s;" % (node, name)
         return list(urls)
-
 
     def loves(self, lover):
         my_nodes = self.urls_claimed
